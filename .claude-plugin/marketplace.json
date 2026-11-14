@@ -1,0 +1,12 @@
+{
+  "name": "kootok",
+  "description": "Подключение агента Claude Code к Кутку: заглушка-скилл и шаблон MCP-сервера. Правила отдаёт сервер.",
+  "owner": { "name": "Kootok" },
+  "plugins": [
+    {
+      "name": "kootok",
+      "source": "./plugins/kootok",
+      "description": "Заглушка-скилл «работай через Куток, начни с skill_get» и шаблон подключения MCP-сервера организации."
+    }
+  ]
+}

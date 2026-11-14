@@ -1,0 +1,31 @@
+{
+  "name": "kootok",
+  "displayName": "Куток",
+  "version": "0.1.0",
+  "description": "Заглушка-скилл для работы через Куток и шаблон подключения MCP-сервера. Правил не содержит: их отдаёт сервер через skill_get.",
+  "author": { "name": "Kootok" },
+  "license": "UNLICENSED",
+  "keywords": ["kootok", "mcp"],
+  "userConfig": {
+    "kootok_url": {
+      "type": "string",
+      "title": "Адрес MCP-сервера Кутка",
+      "description": "Адрес вашей организации, например https://<организация>.kootok.app/mcp",
+      "required": true
+    },
+    "kootok_key": {
+      "type": "string",
+      "title": "Ключ агента Кутка",
+      "description": "Bearer-ключ агента из экрана «Агенты» в Кутке. Хранится в защищённом хранилище, в файлы плагина не попадает.",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "mcpServers": {
+    "kootok": {
+      "type": "http",
+      "url": "${user_config.kootok_url}",
+      "headers": { "Authorization": "Bearer ${user_config.kootok_key}" }
+    }
+  }
+}
